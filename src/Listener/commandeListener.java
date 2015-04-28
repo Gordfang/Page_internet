@@ -1,5 +1,6 @@
 package Listener;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.PrintWriter;
@@ -35,7 +36,7 @@ public class commandeListener implements ActionListener{
 			try {
 				PrintWriter doc = new PrintWriter("C:\\Users\\Baptiste\\Desktop\\test lock\\Private\\fichier.txt");
 				doc.write("<page_internet>\r\n");
-				for (set set : panel.getFb().getFh().getPanelh().getLSet()) {
+				for (set set : panel.getFb().getPanelh().getLSet()) {
 					doc.write("\t<set>\r\n");
 						doc.write("\t\t<nom>"+set.getName()+"</nom>\r\n");
 						for ( String page : set.getLpage()) {
@@ -54,10 +55,12 @@ public class commandeListener implements ActionListener{
 			System.exit(0);
 			break;
 		case 'a':
-			System.out.println("tick");
-			panel.getFb().getFh().remove(panel.getFb().getFh().getPanelh());
-			panel.getFb().getFh().add(panel.getFb().getFh().getPanela());
-			panel.getFb().getFh().revalidate();
+			panel.getFb().remove(panel.getFb().getPanelh());
+			panel.getFb().remove(panel.getFb().getPanelb());
+			panel.getFb().setSize(500, 500);
+			panel.getFb().getContentPane().add(panel.getFb().getPanelah(), BorderLayout.CENTER);
+			panel.getFb().getContentPane().add(panel.getFb().getPanelab(), BorderLayout.SOUTH);
+			panel.getFb().revalidate();
 			break;
 		default:
 			break;

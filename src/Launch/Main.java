@@ -1,12 +1,12 @@
 package Launch;
 
-import HUD.Frame_haut;
+import HUD.Frame;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Frame_haut frame = new Frame_haut();
+		Frame frame = new Frame();
 		frame.setVisible(true);
 	}
 }
