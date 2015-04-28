@@ -26,14 +26,13 @@ public class Panel_haut extends JPanel {
 	private ArrayList<JButton> lbutton = new ArrayList<JButton>();
 	private SAXBuilder sxb = new SAXBuilder();
 	private org.jdom2.Element racine;
-	private Frame_haut fh;
+	private Frame fh;
 
-	public Panel_haut (Frame_haut fh)
+	public Panel_haut (Frame fh)
 	{
 		this.fh = fh;
 		try {
 			readXML();
-			this.setSize(500, (lbutton.size()/3)*100);
 			this.setLayout(new GridLayout(ligne(lbutton.size()), 3));
 			for (JButton jButton : lbutton) {
 				this.add(jButton);
@@ -83,7 +82,7 @@ public class Panel_haut extends JPanel {
 		return lset;
 	}
 
-	public Frame_haut getFh() {
+	public Frame getFh() {
 		return fh;
 	}
 

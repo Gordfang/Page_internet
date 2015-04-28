@@ -18,7 +18,7 @@ public class Panel_bas extends Panel{
 	private JButton add = new JButton("Ajouter");
 	private JButton sup = new JButton("Supprimer");
 	private JButton mod = new JButton("Modifier");
-	private Frame_bas fb;
+	private Frame frame;
 	private commandeListener i = new commandeListener(this);
 	
 	public JButton getQuit() {
@@ -37,13 +37,13 @@ public class Panel_bas extends Panel{
 		return mod;
 	}
 
-	public Frame_bas getFb() {
-		return fb;
+	public Frame getFb() {
+		return frame;
 	}
 
-	public Panel_bas(Frame_bas fb) {
+	public Panel_bas(Frame frame) {
 		// TODO Auto-generated constructor stub
-		this.fb = fb;
+		this.frame = frame;
 		this.setLayout(new GridLayout(1, 4));
 		this.setSize(400, 100);
 		quit.addActionListener(i);
